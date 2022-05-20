@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @doctor %>
+<hr/>
+<%= link_to "new appointment", new_appointment_path(@appointment) %>
+
+<div>
+  <%= link_to "Edit this doctor", edit_doctor_path(@doctor) %> 
+  <%= link_to "Back to doctors", doctors_path %>
+
+  <%= button_to "Destroy this doctor", @doctor, method: :delete %>
+</div>
+<hr/>''
+<div style = "text-align:center">
+<p style="color: red "> to see all patients of  Dr <%= @doctor.name  %>  please </p>
+
+  <%= link_to " click here ", doctor_get_patients_path(@doctor.id), remote: true %>
+
+<p style="color: red ">  Dr <%= @doctor.name  %> has <%= @doctor.patients.count  %> patients </p>
+
+
+
+

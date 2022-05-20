@@ -1,0 +1,17 @@
+<center>
+<table>
+  <tr>
+    <th>doctor</th>
+    <th>experiance</th>  
+  </tr>
+ 
+  <% @patient.doctors.each do |doctor| %>
+    <tr>
+      <td><%= doctor.name %></td>
+      <td><%= doctor.experiance %></td>
+    </tr>
+  <% end %>
+</table>
+
+<button style="color:pink "> <%= link_to "Back to patients", patient_path(@patient) %> </button>
+</center>
